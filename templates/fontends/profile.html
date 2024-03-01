@@ -1,0 +1,29 @@
+{% extends 'fontends/layout/main.html' %} {% block content %}
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="text-center">User Profile</h2>
+                </div>
+                <div class="card-body">
+                    <p>Welcome, <strong>{{ user.username }}</strong>!</p>
+                    <p>This is your profile page. Here you can view your information and manage your account.</p>
+                    <div class="mt-4">
+                        <ul class="list-group">
+                            <li class="list-group-item">Username: {{ user.username }}</li>
+                            <li class="list-group-item">Email: {{ user.email }}</li>
+                            <!-- Add more user information here if needed -->
+                        </ul>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="/my-order/" class="btn btn-success btn-lg btn-block">My Orders</a>
+                        <a href="/wishlist/" class="btn btn-success btn-lg btn-block">My Wishlist</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

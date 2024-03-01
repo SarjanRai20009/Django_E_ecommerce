@@ -1,0 +1,29 @@
+{% extends "fontends/layout/main.html" %} {% block title %}Shop - My Site{% endblock %} {% block content %}
+
+<div class="container my-4">
+    <h4>Shop Products</h4>
+    <div class="row mt-3  g-3">
+        {% for product in products %}
+        <div class="col-lg-3">
+            <a href="/product/{{product.id}}" style="text-decoration: none;">
+                <div class="card border-0">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.image }}" style="height:  40vh; object-fit: cover;"> {% else %}
+                    <img src="https://th.bing.com/th?id=OIP.DAuF8ksdA5Kjh7fLifDpnwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.2&pid=3.1&rm=2" class="card-img-top" alt="{{ product.image }}" style="height:  40vh; object-fit: cover;"> {% endif %}
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }} </h5>
+                        <p class="card-text"><strong>Price : </strong>NPR{{ product.price }}</p>
+                        <p class="card-text"><strong>Descriptions : </strong>{{ product.description }}</p>
+
+                        <!-- <a href="#" class="btn btn-primary">View Product</a> -->
+                        <!-- <button>Order it now</button> -->
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
